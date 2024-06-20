@@ -1,0 +1,10 @@
+NodeVersion - tool that switches between versions -tool is nvm (node version manager)
+to install nvm , the command is 
+(from https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating)
+    .sh | bash
+
+    type nvm to get help for nvm
+    once nvm is installed , run nvm install node - this will install latest
+    version of node 
+    nvm install <version>
+    nvm install --lts (long term support)

@@ -1,0 +1,66 @@
+NODE FILE SYSTEM API
+file can be needed to load data into database or display its contents
+
+Reading an entire file asynchronously-  fs api - function readFile()
+console.table()
+readFile("filename", "utf8", (err, data) => {console.log(data)};
+if(err){console.log,return}
+missing the encoding would also give error
+also callback is must too
+
+Reading an entire file Synchronously -
+readFileSync("filename", "utf8");
+in case of any error, this method will throw an error and cause a crash but if
+you want no crash then use try catch
+this method will make node to wait if the file is big - waste of resource
+solution is readfile asynchrously but without call backs
+
+Reading an entire file ASynchronously but without callbacks --
+const { promisify } = require("util");
+const readFile = promisify(fs.readFile)
+the function which is being (readFile here) promisified must have a call back with
+err and data and err should be first argument.
+
+READING PARTS OF THE FILE - like logfile
+reading parts require atleast two seperate steps and atleast 5 parameters
+when a file is opened , operating system tracks the file and places an identifier
+to that file in the table of open files - with mac it is an integer and in windows
+it is 32 bit handle. since node runs on different 0s - fs abstracts the differences
+and returns a numeric descriptor -> node uses this file desc. to look up the file
+from os's file table
+
+READING A CHUNK AT A TIME
+to read a chunk you need to know the size of the file - fs.stat is used for that
+
+
+READING PARTS OF FILE SYNCHRONOUSLY
+Reading file asynchrnously messes up with order of data so we need the above
+the function is readsync
+
+IMPORTANCE OF CLOSING FILES
+File descriptors have the ability to crash the system
+So anytime you have a file descriptor , you are responsible for closing it
+to avoid closing it.
+
+WRITING TO THE FILE
+const { writeFile } = require("fs");
+writeFile('filename','datatobewritten',);
+appending to file - flg option between data and callback in write file - default is
+w , 'a' for append.
+flag options - 1st option r(read)w(write)a(append)
+second option x(exclusive)+(multiple)s(synchronous)->more for file i/o not for js
+allwoed combinations - r,r+,rs+,w,wx,w+,wx+,a,a+,ax,a+,ax+,as,as+
+
+os level permissions on the file {mode:constants.S_IWUSR |constants.S_IRUSR} -> constants needs
+to be required from fs
+permission constants can be found at fs.constant
+
+WRITING PARTS OF THE FILE
+
+WATCHING FILES
+const {watch} = require('fs)
+watch(./read,()=>{}) -> the path to be watched
+the seond parameter is event listener not a callback  -->
+
+READING AND WRITING TO STREAMS
+
