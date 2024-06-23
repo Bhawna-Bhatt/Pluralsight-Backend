@@ -8,3 +8,49 @@ to install nvm , the command is
     version of node 
     nvm install <version>
     nvm install --lts (long term support)
+    nvm use 14 /nvm use 20
+
+    npm - npm init (creates package.json)
+    npm install express
+
+    const express = require("express");
+    const app = express();
+    app.get("/", (req, res) => {
+    res.send("hello from my app!");
+    });
+    app.listen(3000, () => {
+    console.log("listening on the port 3000");
+    });
+
+    tools to debug express 
+    --chalk
+    --debug (require('debug')('app')) 
+    -->DEBUG=app node app.js 
+    -->DEBUG=* node app.js
+    -- change console.log to debug()
+    -- npm install morgan - for web traffic 
+
+    NPM scripts--
+    In pacakge.json , in section scripts , add your script
+    e.g.- "start" : "DEBUG=* node app.js"
+
+    only start and test options can be run as "npm start" or "npm test"
+    you have to put run in all others e.g. "npm run debug"
+
+
+    Nodemon -- one use - restart the server whenever we change our code
+
+
+    ENVIRONMENTAL VARIABLES --
+    in nodemonConfig - "env"
+
+    TEMPLATE ENGINE -
+    For dynamic html in application.(EJS- )
+    --npm install ejs
+
+
+    USING ROUTES TO BUILD MULTIPLE PAGES
+    ---------------------------------------
+
+    
+

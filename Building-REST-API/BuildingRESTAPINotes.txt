@@ -1,0 +1,19 @@
+REST - Representation State Transfer
+
+--communication standard between client and server
+--stateless (means server does not store any state)
+
+-- to connect to database you need to install drivers in npm 
+-- for MYSql it is - npm install mysql 
+-- a = require('mysql')
+-- a.createConnection()
+
+https://github.com/Buchatech/Jokes-REST-API.git
+
+cURL, which stands for client URL, is a command line tool that
+ developers use to transfer data to and from a server.
+
+ e.g. 
+ 1. GET -- > curl < url>
+ 2. POST --> curl --data "name=John" <url>
+ 3. FETCH --> curl --request GET --url <url> 

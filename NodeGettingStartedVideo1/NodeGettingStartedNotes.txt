@@ -1,151 +1,151 @@
-// 1. The js at server side is executed by VM( like V8 or Chakra). Node does
-// not execute it. Node is a wrapper around V8. Node instructs or passes JS
-// to V8 which will execute it and tell node what are the results and Node
-// makes results available to us.
-// 2. Also, node has built-in modules having rich featureswhich we can use
-// easily through asynchronous API.
-// 3. Asynchronous Apis are biggest benefits of using Node. C++ add ons .
+1. The js at server side is executed by VM( like V8 or Chakra). Node does
+not execute it. Node is a wrapper around V8. Node instructs or passes JS
+to V8 which will execute it and tell node what are the results and Node
+makes results available to us.
+2. Also, node has built-in modules having rich featureswhich we can use
+easily through asynchronous API.
+3. Asynchronous Apis are biggest benefits of using Node. C++ add ons .
 
-// REPL COMMANDS
-// .help
-// .break    Sometimes you get stuck, this gets you out
-// .clear    Alias for .break
-// .editor   Enter editor mode
-// .exit     Exit the REPL
-// .help     Print this help message
-// .load filename     Load JS from a file into the REPL session
-// .save filename   Save all evaluated commands in this REPL session to a file
-// Press Ctrl+C to abort current expression, Ctrl+D to exit the REPL
-// Ctrl +L to clear screen
-// node -v ; which node ; which npm ; which npx
-//more filename (to inspect content of file m7)
-// single tab - auto complete on repl
-// double tab - to see possible options e.g. type c and double tab or Array. double tab
-//.double tab
-// empty line double tab - shows everything at global level
-// lowercase are built in modules in Node - available directly in repl
-// _ stores value of last evaluated expression
-//cp file1 file2
-/////////////////////////////////////////////////////////////////////////
+REPL COMMANDS
+.help
+.break    Sometimes you get stuck, this gets you out
+.clear    Alias for .break
+.editor   Enter editor mode
+.exit     Exit the REPL
+.help     Print this help message
+.load filename     Load JS from a file into the REPL session
+.save filename   Save all evaluated commands in this REPL session to a file
+Press Ctrl+C to abort current expression, Ctrl+D to exit the REPL
+Ctrl +L to clear screen
+node -v ; which node ; which npm ; which npx
+more filename (to inspect content of file m7)
+single tab - auto complete on repl
+double tab - to see possible options e.g. type c and double tab or Array. double tab
+.double tab
+empty line double tab - shows everything at global level
+lowercase are built in modules in Node - available directly in repl
+_ stores value of last evaluated expression
+cp file1 file2
+///////////////////////////////////////////////////////////////////////
 
-// NODE
-// setTimeout,setInterval, set Immediate, clearTimeout,clearInterval,clearImmediate
-//node -v,node-p (node -p "os.cpus()") (node -p "process.versions.v8")
-//node -h | less
-//node --v8-options | grep "in progress"
-// use Node environment variables for eg NODE DEBUG ="http" filename
-//process object - env property (video-3.6)
-//process argv array (eg -node -p "process.argv" hello 32)
-//stdout,stderr,stdin in process variable
+NODE
+setTimeout,setInterval, set Immediate, clearTimeout,clearInterval,clearImmediate
+node -v,node-p (node -p "os.cpus()") (node -p "process.versions.v8")
+node -h | less
+node --v8-options | grep "in progress"
+use Node environment variables for eg NODE DEBUG ="http" filename
+process object - env property (video-3.6)
+process argv array (eg -node -p "process.argv" hello 32)
+stdout,stderr,stdin in process variable
 
-// Modern JS
-//Object.freeze()
-//Immutable.js
+Modern JS
+Object.freeze()
+Immutable.js
 
-//NPM
-// npmjs.com
-// to update npm - npm install -g npm
-// npm -i (to install things mentioned in package.json)
-// npm -i -D (install for dev env and not production)
-// npm init - creates initial package.json file
-//semvar - semantic versioning
+NPM
+npmjs.com
+to update npm - npm install -g npm
+npm -i (to install things mentioned in package.json)
+npm -i -D (install for dev env and not production)
+npm init - creates initial package.json file
+semvar - semantic versioning
 
-// // create NPM package
-// 1.make a directory and in that make your package file ( containing the code for it)
-// 2.the file should be index.js - node will look for it and inside that use package name as function
-// 3. this custom package should be inside the node module of folder where we require it.
-// 4. work-around (you can use relative path instead of package but it is not a node module)
-// 5. in package file - use modules.export = notation to make it work
-// 6. now to make is node pacakge in module--  using npm i (package-name) - the steps are
-// 7. create an account in npmjs.com
-// 8.now do npm login (it will connect to npmjs.com with your account)
-// 9.cd into dir where package is there
-// 10. then do npm init - it will ask few question e.g. pkg name ,version etc
-// 11.you get package.json now do npm.publish
-// 12. check it in npmjs.com -- pkg should be there
-// 13.now go to dir where you need it and do npm i pkgname
+// create NPM package
+1.make a directory and in that make your package file ( containing the code for it)
+2.the file should be index.js - node will look for it and inside that use package name as function
+3. this custom package should be inside the node module of folder where we require it.
+4. work-around (you can use relative path instead of package but it is not a node module)
+5. in package file - use modules.export = notation to make it work
+6. now to make is node pacakge in module--  using npm i (package-name) - the steps are
+7. create an account in npmjs.com
+8.now do npm login (it will connect to npmjs.com with your account)
+9.cd into dir where package is there
+10. then do npm init - it will ask few question e.g. pkg name ,version etc
+11.you get package.json now do npm.publish
+12. check it in npmjs.com -- pkg should be there
+13.now go to dir where you need it and do npm i pkgname
 
-//npx - binary which comes with node - npx execute
-//npm run scripts - to automate the way your app can be used. script section in package
-//.json
-//to configure eslint - npx eslint --init
-//npx eslint - to access the local binary for eslint here
-//special names in npm run section - find them using --> npm help npm-scripts
+npx - binary which comes with node - npx execute
+npm run scripts - to automate the way your app can be used. script section in package
+.json
+to configure eslint - npx eslint --init
+npx eslint - to access the local binary for eslint here
+special names in npm run section - find them using --> npm help npm-scripts
 
-// npm - npm update package
-//npm ls - lists whole dependency tree --> can be used to see versions
-// npm show pkgname
-//npm outdated
-//npm i pkgname@version (the version you want to install or @latest)
-// revise npm video (5) again
-//npm init -y (yes for any prompts)
+npm - npm update package
+npm ls - lists whole dependency tree --> can be used to see versions
+npm show pkgname
+npm outdated
+npm i pkgname@version (the version you want to install or @latest)
+revise npm video (5) again
+npm init -y (yes for any prompts)
 
-//Global objects in node
-// process , Buffer, _dirname, _filename, console,module,
+Global objects in node
+process , Buffer, _dirname, _filename, console,module,
 
-//MODULES AND CONCURRENCY
-//node wraps the file with a function not just executes it. thats why they called
-//modules
-//keyword arguments in js - give argument list passed to the function .--> for
-//dynamic number of arguments
-//node modules are not just files they are function that return arguments even if the
-//only stmt in file is console.log(arguments)
-// the arguments are - export,module,require,__files,--dirname
-// export,module- to define api of this module
-//require- to get other modules
-// __files,--dirname - path of this file and directory
-// this function also returns something - module.exports
+MODULES AND CONCURRENCY
+node wraps the file with a function not just executes it. thats why they called
+modules
+keyword arguments in js - give argument list passed to the function .--> for
+dynamic number of arguments
+node modules are not just files they are function that return arguments even if the
+only stmt in file is console.log(arguments)
+the arguments are - export,module,require,__files,--dirname
+export,module- to define api of this module
+require- to get other modules
+__files,--dirname - path of this file and directory
+this function also returns something - module.exports
 
-//export can be used to return multiple object whereas module.export returns
-// a single thing
-//avoid making global variables in node . only global variables in node are attached
-// to global keyword(equivalent to window in browsers)
-// console.dir(global,{depth:0})
-// to make anything global --> global.a =42
+export can be used to return multiple object whereas module.export returns
+a single thing
+avoid making global variables in node . only global variables in node are attached
+to global keyword(equivalent to window in browsers)
+console.dir(global,{depth:0})
+to make anything global --> global.a =42
 
-//EVENT LOOP
-// is what node uses to process asynchronous actions and interface them for you
-// so you dont have to deal with threads.
-// EL is just a simple infinite loop that's built inside and
-// its main task is to monitor any asyncronous operations and figure out when
-//they need to be consumed.
-//ps -ef |grep node (on terminal to show all process for node)
+EVENT LOOP
+is what node uses to process asynchronous actions and interface them for you
+so you dont have to deal with threads.
+EL is just a simple infinite loop that's built inside and
+its main task is to monitor any asyncronous operations and figure out when
+they need to be consumed.
+ps -ef |grep node (on terminal to show all process for node)
 
-//ERRORS AND EXCEPTIONS
-//exceptions are conditions that application can deal with whereas errors are
-//unknown problems that application cant deal with.handle exceptions using try catch
+ERRORS AND EXCEPTIONS
+exceptions are conditions that application can deal with whereas errors are
+unknown problems that application cant deal with.handle exceptions using try catch
 
-//NODES ASYNCHRONOUS PATTERNS
-//callbacks , promises etc
-// imp -> a tool util.promisify to any builtin async API method(eg readfile).make a
-// modified readfile using promisify object and use it in async and await
-//node's idomatic pattern is 'error-first callback.'
-//**  Some modules has first level support for promises by node.so you dont need to
-//use util.promisify . they can be used directly as they return native promises.
-//case 1 : const fs = require('fs');
-//const util = require('util');
-//const readFile = util.promisify(fs.readFile);
-//case : 2 const { readFile } = require('fs').promises; (note the reuire is done from promises itself)
+NODES ASYNCHRONOUS PATTERNS
+callbacks , promises etc
+imp -> a tool util.promisify to any builtin async API method(eg readfile).make a
+modified readfile using promisify object and use it in async and await
+node's idomatic pattern is 'error-first callback.'
+**  Some modules has first level support for promises by node.so you dont need to
+use util.promisify . they can be used directly as they return native promises.
+case 1 : const fs = require('fs');
+const util = require('util');
+const readFile = util.promisify(fs.readFile);
+case : 2 const { readFile } = require('fs').promises; (note the reuire is done from promises itself)
 
-// EVENT EMITTER
-// A Library in node.built in in node so no need to install
-//const EventEmitter = require('events');
-//streams such as process.stdin and process.stdout are event emitters
+EVENT EMITTER
+A Library in node.built in in node so no need to install
+const EventEmitter = require('events');
+streams such as process.stdin and process.stdout are event emitters
 
-// WORKING WITH WEB SERVERS
-//http module is a builtin module - http.CreateServer() - creates a variable
-//which is an event
-// to auto restart node - use nodemon
-//nodemon -simple monitor script for use during development of a Node.js app
-//nodemon - node monitor -- run your scripts with nodemon <filename> in place of node
+WORKING WITH WEB SERVERS
+http module is a builtin module - http.CreateServer() - creates a variable
+which is an event
+to auto restart node - use nodemon
+nodemon -simple monitor script for use during development of a Node.js app
+nodemon - node monitor -- run your scripts with nodemon <filename> in place of node
 
-// req and res in http -- console.dir(req,{depth:0})
-//know more about req object -- in nodejs documentation --> http.IncomingMessage
-//** req here is not equivalent to ClientRequest in documentation
-//res is equivalent to ServerResponse in documentation
-//req and res are streams . req is readable stream whereas res is writeable stream
-//express - web framework for node
+req and res in http -- console.dir(req,{depth:0})
+know more about req object -- in nodejs documentation --> http.IncomingMessage
+** req here is not equivalent to ClientRequest in documentation
+res is equivalent to ServerResponse in documentation
+req and res are streams . req is readable stream whereas res is writeable stream
+express - web framework for node
 
-//Web template system - on wiki (Template Languages) e.g. - Pug,Handlebars,EJS
-//EJS <%- JS code -%>
-// React and JSX on server can be used as template
+Web template system - on wiki (Template Languages) e.g. - Pug,Handlebars,EJS
+EJS <%- JS code -%>
+React and JSX on server can be used as template
