@@ -54,3 +54,4 @@ to install nvm , the command is
 
     
 
+    lsof -i tcp:3000

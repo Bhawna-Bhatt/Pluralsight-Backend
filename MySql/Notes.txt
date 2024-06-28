@@ -1,0 +1,39 @@
+SEQUEL - STRUCTURED ENGLISH QUERY LANGUAGE (BEFORE)
+Databases are important -
+1. they can scale
+2. can be shared
+3.can be secured/backed up
+4.can have data integrity
+MYSql is a DBMS - Database Management System - required to keep database up and
+running, control access, and various rules are applied.
+
+Entity -the fundamental component that represents objects or concepts in real world.
+represented by table in RDBMS
+
+Blob - binary large object
+
+Referential integrity - Any relationship between tables must be valid and accurate
+for data to be consistent and meaningful in database.
+
+### SQL uses single quote for string delimitation.
+
+Collation settings-is a database setting where text searches are either case-sensitive
+or case-insensitive by default. some configure at database level or others at column
+level
+
+UNION vs UNION ALL
+
+Always run a select before delete to make sure the rows getting deleted are same.
+
+MYSQL -----------------
+
+1. Open source DB by Oracle
+RDBMS Model - 1970 Edgar Codd
+MYSQL License - GNU General Public License 
+
+To run Mysql from commandline in Mac -
+<to find from where a command is running do which <command> for eg which ls>
+<to see each path in its own line - tr ':' '\n' <<< $PATH
+1. Terminal - echo $PATH (check if Mysql is on path)
+2. ls al -> (look for .zshrc file). open this file using vi editor
+3. vi .zshrc  
