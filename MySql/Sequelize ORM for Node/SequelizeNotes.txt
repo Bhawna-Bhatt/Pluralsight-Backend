@@ -36,3 +36,7 @@ generatedata.com to generate data
 
 bulkCreate () to load data into table
 
+Transactions allow you to execute a series of operations as a single unit of work,
+ ensuring data integrity. If any operation in the transaction fails, all changes
+  can be rolled back to maintain a consistent state.
+Sequelize, you can use the transaction method.
